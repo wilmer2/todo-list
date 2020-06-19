@@ -35,7 +35,7 @@ const GET_TASKS = gql`
   }
 `;
 
-const HomeInputContainer = () => {
+const HomeInputContainer = ({ currentUser }) => {
   const [taskName, setTaskName] = useState('');
 
   const [addTask, { loading, error }] = useMutation(ADD_TASK, {
@@ -56,7 +56,7 @@ const HomeInputContainer = () => {
   });
 
   const handleSubmitAddTask = async taskName => {
-    const data = { name: taskName, user: { connect: { id: 'ckbgxcr6j000507mh3c08aei0' } } };
+    const data = { name: taskName, user: { connect: { id: currentUser.id } } };
     
     try {
       await addTask({ variables: { data }});

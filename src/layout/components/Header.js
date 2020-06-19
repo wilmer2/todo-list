@@ -3,7 +3,7 @@ import 'jquery';
 import 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-const Header = ({ onClickLogout }) => {
+const Header = ({ onClickLogout, currentUser }) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const wrapperRef = useRef(null);
 
@@ -39,7 +39,7 @@ const Header = ({ onClickLogout }) => {
             />
           </figure>
           <div className='todo-header__name ml-2'>
-              Wilmer Maldonado
+              {currentUser.firstName} {currentUser.lastName}
           </div>
           <i  className='todo-icon-keyboard_arrow_down-24px ml-2'/>
           <div

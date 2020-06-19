@@ -33,6 +33,17 @@ const GET_USERS = gql`
   }
 `;
 
+const GET_CURRENTE_USER = gql`
+ query GetCurrentUser($email: String) {
+   user(email: $email) {
+     id
+     email
+     firstName
+     lastName
+   } 
+ }
+`;
+
 const HomeLoading = () => (
   <div className='text-center mt-5'>
     <LoaderSpinner />
@@ -52,11 +63,15 @@ const HomeError = ({ error }) => {
 };
 
 const HomeContainer = () => {
+  const email = localStorage.getItem('email');
   const { loading: loadingTask, error: errorTask, data: tasks } = useQuery(GET_TASKS);
   const { loading: loadingUser, error: errorUser, data: users } = useQuery(GET_USERS);
+  const { loading: loadingCurrentUser, error: errorCurrentUser, data } = useQuery(GET_CURRENTE_USER, {
+    variables: { email }
+  });
 
-  const loading = loadingTask || loadingUser;
-  const error = errorTask || errorUser;
+  const loading = loadingTask || loadingUser || loadingCurrentUser;
+  const error = errorTask || errorUser || errorCurrentUser;
 
   if (error) return <HomeError error={error}  />
   if (loading) return <HomeLoading />
@@ -65,6 +80,7 @@ const HomeContainer = () => {
     <HomeView 
       tasks={tasks} 
       users={users}
+      currentUser={data.user}
     />
   );
 };

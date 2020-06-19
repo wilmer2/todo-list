@@ -29,8 +29,6 @@ const client = new ApolloClient({
 
 const initialData = {
   isLoggedIn: false,
-  errorMessage: '',
-  infoMessage: '',
 };
 
 client.writeData({data : initialData });
