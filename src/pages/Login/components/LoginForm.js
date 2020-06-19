@@ -32,7 +32,7 @@ const LoginForm = ({ onSubmit, loading }) => {
               setStatus={setStatus}
             />
             <BasicInput 
-              title='Correo electrónico'
+              title='Contraseña'
               name='password'
               type='password'
               errors={errors}
