@@ -3,9 +3,9 @@ import Header from './Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const LayoutWrapper = ({ children }) => (
+const LayoutWrapper = ({ children, onClickLogout }) => (
   <>
-    <Header />  
+    <Header onClickLogout={onClickLogout} />  
     <div className='todo__wrapper'>
       {children}
     </div>

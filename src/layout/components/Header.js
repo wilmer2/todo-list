@@ -1,13 +1,36 @@
-import React from 'react';
+import React,{ useState, useRef, useEffect } from 'react';
 import 'jquery';
 import 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-const Header = () => (
-  <header className='todo-header'>
-    <div className='todo-header__content container'>
-      <div className='todo-dropdown'>
-        <div className='todo-header__avatar d-flex align-items-center'>
+const Header = ({ onClickLogout }) => {
+  const [showDropDown, setShowDropDown] = useState(false);
+  const wrapperRef = useRef(null);
+
+  const handleClickShowDropDown = () => setShowDropDown(!showDropDown);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+        setShowDropDown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  })
+
+  return (
+    <header className='todo-header'>
+      <div className='todo-header__content container todo__dropdown'>
+        <div 
+          className='todo-header__avatar d-flex align-items-center todo__pointer'
+          onClick={handleClickShowDropDown}
+          ref={wrapperRef}
+        >
           <figure className='todo-header__img-container'>
             <img 
               className='todo-header__img'
@@ -16,16 +39,22 @@ const Header = () => (
             />
           </figure>
           <div className='todo-header__name ml-2'>
-            Wilmer Maldonado
+              Wilmer Maldonado
           </div>
           <i  className='todo-icon-keyboard_arrow_down-24px ml-2'/>
+          <div
+            className={`todo__dropdown-content todo-header__dropdown 
+              ${showDropDown ? 'todo__dropdown-content--show' : ''} 
+            `}
+          >
+            <div className='todo-header__link' onClick={onClickLogout}>Cerrar sesión</div>
+          </div>
         </div>
-        <div className='todo__dropdown-menu d-none'>
-          <a className='todo__dropdown-item' href="#">Salir</a>
-        </div>
+        
       </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+}
+  
 
 export default Header;
