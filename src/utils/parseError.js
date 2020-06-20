@@ -1,7 +1,6 @@
 import hasIn from 'lodash/hasIn';
 import has from 'lodash/has';
 import I18n from 'i18n-js';
-import validationTranslate from './validationSchemas/validationTranslate';
 
 const VALIDATION_ERROR = 'ValidationError';
 const BAD_CREDENTIAL_MESSAGE = 'Incorrect email or password';
