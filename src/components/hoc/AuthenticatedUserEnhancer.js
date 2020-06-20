@@ -36,7 +36,7 @@ const authenticatedUser = WrappedComponent => props => {
       const data = { refreshToken: refreshToken };
       
       setRefreshToken(({ variables: { data }})); 
-    }, 50000);
+    }, 100000);
 
     return () => {
       clearInterval(intervalId);
@@ -62,6 +62,7 @@ const authenticatedUser = WrappedComponent => props => {
     }
   }, [error, props])
 
+  if (error) return null;
   
   if (loading) return (
     <div className='todo__wrapper d-flex justify-content-center align-items-center'>
