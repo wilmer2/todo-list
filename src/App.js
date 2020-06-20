@@ -27,9 +27,6 @@ const client = new ApolloClient({
       }
     });
   },
-  onError(error) {
-    console.log('error', error);
-  }
 });
 
 const initialData = {

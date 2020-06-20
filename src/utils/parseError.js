@@ -1,9 +1,11 @@
 import hasIn from 'lodash/hasIn';
 import has from 'lodash/has';
 import I18n from 'i18n-js';
+import validationTranslate from './validationSchemas/validationTranslate';
 
 const VALIDATION_ERROR = 'ValidationError';
 const BAD_CREDENTIAL_MESSAGE = 'Incorrect email or password';
+const THORTTLING_ERROR = 'ThrottlingThresholdReachedError';
 
 const getValidationErrorFormat = fields => {
   return Object.keys(fields).reduce((validationFieldError, fieldKey) => ({
@@ -33,6 +35,10 @@ const parseError = errors => {
   
       if (has(error, 'code') && error.code === VALIDATION_ERROR) {
         validationInputError = getValidationErrorFormat(error.details);
+      }
+
+      if (has(error, 'code') && error.code === THORTTLING_ERROR) {
+        validationMessageError = I18n.t(`fromServer.${THORTTLING_ERROR}`); 
       }
     });
   }
