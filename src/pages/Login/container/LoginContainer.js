@@ -30,8 +30,7 @@ const LoginContainer = ({ history }) => {
       
       localStorage.setItem('token', userLogin.auth.idToken);
       localStorage.setItem('refreshToken', userLogin.auth.refreshToken);
-      localStorage.setItem('email', values.email);
-      
+      localStorage.setItem('email', values.email)
       history.push('/home');
     } catch(error) {
       const parsedError = parseError(error);
