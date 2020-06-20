@@ -13,6 +13,9 @@ export default {
     [serverMessage.CREDENTIAL_BAD]: 'Correo o contraseña incorrectos',
     [serverMessage.FAILED_FETCH]: 'No se pudo establecer conexión, verifica si tienes internet',
     [serverMessage.INVALID_TOKEN]: 'Vuelve a conectarte',
-
+  },
+  validationInput: {
+    isEmail: 'Ingrese  %{key}  válido',
+    isRequired: 'Ingrese %{key}',
   },
 };
