@@ -2,12 +2,17 @@ import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import I18n from 'i18n-js';
+import translations from './translations';
 import { typeDefs, resolvers } from './utils/clientSchema';
 
 import Layout from './layout';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
+
+I18n.translations = translations;
+I18n.locale = 'es';
 
 const client = new ApolloClient({
   uri: 'https://api.8base.com/ckbgxchq4000207md19u190fk',
