@@ -65,7 +65,7 @@ const authenticatedUser = WrappedComponent => props => {
   if (error) return null;
   
   if (loading) return (
-    <div className='todo__wrapper d-flex justify-content-center align-items-center'>
+    <div id='auth-spinner' className='todo__wrapper d-flex justify-content-center align-items-center'>
       <LoaderSpinner />
     </div>
   );
