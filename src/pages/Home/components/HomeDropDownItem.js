@@ -11,7 +11,7 @@ const HomeDropDownItem = ({ user, onChangeUser, onClickShowDropDown }) => {
   
   return (
     <div 
-      className='d-flex align-items-center mt-2 pt-1 pb-2 pl-4 pr-4 border-bottom todo__pointer'
+      className='d-flex align-items-center mt-2 pt-1 pb-2 pl-4 pr-4 border-bottom todo__pointer todo-home__task-dropdown-item'
       onClick={handleClick}
     >
       <figure className='todo-home__task-item-img-container'>
