@@ -1,5 +1,6 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
+import LoaderSpinner from '../../../components/ui/LoaderSpinner';
 import BasicInput from '../../../components/input/BasicInput';
 import loginValidationSchema from '../../../utils/validationSchemas/loginValidationSchema';
 
@@ -48,7 +49,7 @@ const LoginForm = ({ onSubmit, loading }) => {
               type='submit' 
               className='btn btn-primary btn-block todo-login__button'
             >
-              {!loading ? 'Ingresa' : 'Cargando ' }
+              {!loading ? 'Ingresa' :  <LoaderSpinner width={20} height={20} color='white' /> }
             </button>
           </Form>
         )

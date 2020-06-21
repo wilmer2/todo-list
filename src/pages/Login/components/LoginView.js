@@ -14,7 +14,7 @@ const LoginView = ({ onSubmit, loading, errorMessage }) => (
           <div className='todo-login__form-wrapper'>
             {!isEmpty(errorMessage) && <ErrorGeneral errorMessage={errorMessage} />}
             <LoginForm  onSubmit={onSubmit} loading={loading} />
-            <LoginLinks />
+            <LoginLinks isDisabled={loading} />
           </div>
         </div>
       </div>
