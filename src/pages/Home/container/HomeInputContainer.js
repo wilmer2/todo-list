@@ -38,7 +38,7 @@ const GET_TASKS = gql`
 const HomeInputContainer = ({ currentUser }) => {
   const [taskName, setTaskName] = useState('');
 
-  const [addTask, { loading, error }] = useMutation(ADD_TASK, {
+  const [addTask, { loading }] = useMutation(ADD_TASK, {
     update(cache, { data: { taskCreate: task} }) {
       const tasks = cache.readQuery({ query: GET_TASKS });
       const addingTask = [...tasks.tasksList.items, task] ;
