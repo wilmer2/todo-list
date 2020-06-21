@@ -17,7 +17,7 @@ const guestUser =  WrappedComponent => props => {
 
   if (loading) {
     return (
-      <div className='todo__wrapper d-flex justify-content-center align-items-center'>
+      <div id='guest-spinner' className='todo__wrapper d-flex justify-content-center align-items-center'>
         <LoaderSpinner />
       </div>
     );
