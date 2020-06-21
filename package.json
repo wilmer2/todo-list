@@ -31,6 +31,7 @@
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "test:mocha": "mocha --require @babel/register --require test/setup.js  --require ignore-styles",
+    "test:server": "serve build",
     "test:dev": "yarn run build && run-p --race test:server cypress:open"
   },
   "eslintConfig": {
