@@ -1,13 +1,7 @@
 import React from 'react';
 import HomeTaskListItemContainer from '../container/HomeTaskListItemContainer';
+import HomeTaskEmptyList from './HomeTaskEmptyList';
 
-const HomeTaskEmptyList = () => (
-  <div className='card'>
-    <div className='card-body text-center'>
-     Aún no has agregado tareas
-    </div>
-  </div>
-);
 
 const HomeTaskList = ({ tasks, users }) => (
   <div className='todo-home__task-list mt-2'>    
