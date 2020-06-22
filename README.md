@@ -1,4 +1,4 @@
-Este proyecto fue creado con Create-React-App y usand 8base como Backend as a service (
+Este proyecto fue creado con Create-React-App y usand 8base como Backend as a service 
 
 ## Scripts disponibles
 
@@ -13,14 +13,13 @@ La página se volverá a cargar si realizas modificaciones.<br />
 También verá errores en consola..
 
 ### `yarn test:dev`
-Corre los test de e2e en modo desarrollo abriendo la consola ofrecida por cypress
+Corre los test de e2e  abriendo la consola ofrecida por cypress
 
 ### `yarn test:mocha`
 Corre test unitarios usando mochas
 
 ### `yarn test:all`
 Corre los test unitario y luego los de e2e usando cypress en modo headless
-
 
 ### `yarn test`
 
