@@ -1,26 +1,36 @@
 describe('Test home', () => {
   before(() => {
-    cy.visit('/');
-    cy.get('#email').type('wilmer.payall@gmail.com');
-    cy.get('#password').type('wilmer123');
-    cy.contains('.btn', 'Ingresa').click();
+    cy.fixture('user.json').as('userData');
+    cy.get('@userData').then((userData) => {
+      cy.visit('/');
+      cy.get('#email').type(userData.email);
+      cy.get('#password').type(userData.password);
+      cy.contains('.btn', 'Ingresa').click();
 
-    cy.wait(3000);
+      cy.wait(3000);
+    });
+  });
+
+  beforeEach(() => {
+    cy.fixture('user.json').as('userData');
   });
 
   it('Init home', () => {
-    cy.get('.todo-header__avatar').as('header');
-    cy.contains('Cerrar sesión').as('logoutMessage');
-    cy.get('@logoutMessage').should('not.be.visible');
-    cy.contains('.todo-header__name', 'Wilmer Maldonado').click();
-    cy.get('@logoutMessage').should('be.visible');
-    cy.get('header').click();
-    cy.get('@logoutMessage').should('not.be.visible');
-    cy.wait(3000);
-    cy.contains('h1', 'Tareas');
-    cy.get('.todo-home__input');
-    cy.contains('.btn', 'Agregar');
-    cy.contains('Aún no has agregado tareas');
+    cy.get('@userData').then((userData) => {
+      cy.get('.todo-header__avatar').as('header');
+      cy.contains('Cerrar sesión').as('logoutMessage');
+      cy.get('@logoutMessage').should('not.be.visible');
+      cy.contains('.todo-header__name', `${userData.firstName} ${userData.lastName}`).click();
+      cy.get('@logoutMessage').should('be.visible');
+      cy.get('header').click();
+      cy.get('@logoutMessage').should('not.be.visible');
+      cy.wait(3000);
+      cy.contains('h1', 'Tareas');
+      cy.get('.todo-home__input');
+      cy.contains('.btn', 'Agregar');
+      cy.contains('Aún no has agregado tareas');
+    });
+    
   });
 
   it('Add Task', () => {
@@ -93,9 +103,11 @@ describe('Test home', () => {
     cy.contains('Aún no has agregado tareas');
   });
 
-  it('Logout', () =>{
-    cy.contains('.todo-header__name', 'Wilmer Maldonado').click();
-    cy.contains('Cerrar sesión').click();
-    cy.url().should('include', '/');
+  it('Logout', () => {
+    cy.get('@userData').then((userData) => {
+      cy.contains('.todo-header__name', `${userData.firstName} ${userData.lastName}`).click();
+      cy.contains('Cerrar sesión').click();
+      cy.url().should('include', '/');
+    });
   });
 });

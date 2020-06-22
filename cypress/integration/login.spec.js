@@ -1,6 +1,8 @@
 describe('Test login', () => {
   beforeEach(() => {
+    cy.fixture('user.json').as('userData');
     cy.visit('/');
+    
   });
 
   it('Load login', () => {
@@ -59,10 +61,16 @@ describe('Test login', () => {
 
   it('Send correct credentials', () => {
     cy.reload();
-    cy.get('#email').type('wilmer.payall@gmail.com');
-    cy.get('#password').type('wilmer123');
-    cy.get('.btn').click();
-    cy.wait(4000);
-    cy.url().should('include', '/home');
-  })
+
+    cy.get('@userData').then((userData) => {
+      cy.get('#email').type(userData.email);
+      cy.get('#password').type(userData.password);
+      cy.get('.btn').click();
+      cy.wait(4000);
+      cy.url().should('include', '/home');
+      cy.contains('.todo-header__name', `${userData.firstName} ${userData.lastName}`).click();
+      cy.contains('Cerrar sesión').click();
+      cy.url().should('include', '/');
+    });
+  });
 });
