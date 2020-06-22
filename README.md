@@ -2,6 +2,7 @@
 
 Este proyecto fue creado con Create-React-App y usand 8base como Backend as a service 
 
+
 ## Librerias Principales
 
 - react
@@ -12,6 +13,8 @@ Este proyecto fue creado con Create-React-App y usand 8base como Backend as a se
 - lodash
 - i18n-js
 - yup
+
+
 
 ## Scripts Disponibles
 
