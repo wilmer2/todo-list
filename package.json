@@ -27,12 +27,13 @@
   "scripts": {
     "start": "react-scripts  start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "test:mocha": "mocha --require @babel/register --require test/setup.js  --require ignore-styles",
     "test:server": "serve build",
-    "test:dev": "REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:open"
+    "test:dev": "REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:open",
+    "test": "REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:run"
   },
   "eslintConfig": {
     "extends": "react-app"
