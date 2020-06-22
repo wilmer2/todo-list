@@ -2,7 +2,7 @@
 
 Este proyecto fue creado con Create-React-App y usand 8base como Backend as a service 
 
-## Librerias destacadas
+## Librerias Principales
 
 - react
 - react-router-dom
@@ -13,7 +13,7 @@ Este proyecto fue creado con Create-React-App y usand 8base como Backend as a se
 - i18n-js
 - yup
 
-## Scripts disponibles
+## Scripts Disponibles
 
 En el directorio puedes correr:
 
