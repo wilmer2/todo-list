@@ -33,7 +33,9 @@
     "test:mocha": "mocha --require @babel/register --require test/setup.js  --require ignore-styles",
     "test:server": "serve build",
     "test:dev": "REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:open",
+    "test:all": "yarn run test:mocha && REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:run",
     "test": "REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:run"
+
   },
   "eslintConfig": {
     "extends": "react-app"
