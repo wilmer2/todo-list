@@ -2,6 +2,17 @@
 
 Este proyecto fue creado con Create-React-App y usand 8base como Backend as a service 
 
+## Librerias destacadas
+
+- react
+- react-router-dom
+- apollo
+- formik
+- bootstrap
+- lodash
+- i18n-js
+- yup
+
 ## Scripts disponibles
 
 En el directorio puedes correr:
