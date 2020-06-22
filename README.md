@@ -12,7 +12,7 @@ Corre la app en modo development .<br />
 Abre [http://localhost:3000](http://localhost:3000) para verla en tu navegador.
 
 La página se volverá a cargar si realizas modificaciones.<br />
-También verá errores en consola..
+También verá errores en consola
 
 ### `yarn test:dev`
 Corre los test de e2e  abriendo la consola ofrecida por cypress
