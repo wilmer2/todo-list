@@ -16,7 +16,7 @@ También verá errores en consola..
 Corre los test de e2e  abriendo la consola ofrecida por cypress
 
 ### `yarn test:mocha`
-Corre test unitarios usando mochas
+Corre test unitarios usando mocha
 
 ### `yarn test:all`
 Corre los test unitario y luego los de e2e usando cypress en modo headless
