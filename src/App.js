@@ -15,7 +15,7 @@ I18n.translations = translations;
 I18n.locale = 'es';
 
 const client = new ApolloClient({
-  uri: 'https://api.8base.com/ckbgxchq4000207md19u190fk',
+  uri:  `https://api.8base.com/${process.env.REACT_APP_TOKEN_ID ? process.env.REACT_APP_TOKEN_ID: 'ckbq678e0000207kzc4rt1en2'}`,
   typeDefs,
   resolvers,
   request(operation) {
@@ -32,9 +32,13 @@ const client = new ApolloClient({
   }
 });
 
+
+console.log(`https://api.8base.com/${process.env.REACT_APP_TOKEN_ID ? process.env.REACT_APP_TOKEN_ID: 'ckbq678e0000207kzc4rt1en2'}`);
+
 const initialData = {
   isLoggedIn: false,
 };
+
 
 client.writeData({data : initialData });
 
