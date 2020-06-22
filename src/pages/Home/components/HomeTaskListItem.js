@@ -31,7 +31,7 @@ const HomeTaskListItem = ({
   loading,
   onDeleteTask 
 }) => (
-  <div className='todo-home__task-item d-flex justify-content-between align-items-center'>
+  <div className='todo-home__task-item'>
       <div 
         className={`todo-home__task-item-overlay ${loading ? 'todo-home__task-item-overlay--active': ''}`} 
       />
@@ -40,14 +40,16 @@ const HomeTaskListItem = ({
         task={task}
         onChangeUser={onChangeUser}
       />
-      <HomeTaskListItemName  
-        task={task} 
-      />
-      <HomeListItemActions 
-        completed={task.completed} 
-        onChangeComplete={onChangeComplete}
-        onDeleteTask={onDeleteTask}
-      />
+      <div className='todo-home__task-item-info'>
+        <HomeTaskListItemName  
+          task={task} 
+        />
+        <HomeListItemActions 
+          completed={task.completed} 
+          onChangeComplete={onChangeComplete}
+          onDeleteTask={onDeleteTask}
+        />
+      </div>
   </div>
 );
 

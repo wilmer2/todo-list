@@ -16,10 +16,9 @@
     border-bottom: 1px solid $grayColor
     padding: 10px 16px
 
-    overflow: scroll
-
     @include respondTo($minWidth, 768px)
-      overflow: initial
+      display: flex
+      align-items: center
    
   &__task-item-img-container
     width: 40px
@@ -83,3 +82,14 @@
     @include respondTo($minWidth, 768px)
       display: block
       margin-left: 0
+
+  &__task-item-info
+    display: flex
+    margin-top: 10px
+
+    @include respondTo($minWidth, 768px)
+      flex-grow: 1
+      justify-content: space-between
+      
+      margin-top: 0
+      margin-left: 15%
