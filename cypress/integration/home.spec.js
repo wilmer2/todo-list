@@ -52,7 +52,7 @@ describe('Test home', () => {
     cy.get('.todo-home__task-item-name').as('taskName');
     cy.get('.todo-home__task-item-overlay').as('overlay');
     cy.get('[type="checkbox"]').as('checkboxTask');
-    cy.get('@checkboxTask').check();
+    cy.get('@checkboxTask').click();
     cy.get('@overlay').should('have.class', 'todo-home__task-item-overlay--active');
     cy.wait(3000);
     cy.get('@taskName').should('have.class', 'todo-home__task-item-name--completed');
@@ -63,7 +63,7 @@ describe('Test home', () => {
     cy.get('.todo-home__task-item-name').as('taskName');
     cy.get('.todo-home__task-item-overlay').as('overlay');
     cy.get('[type="checkbox"]').as('checkboxTask');
-    cy.get('@checkboxTask').uncheck();
+    cy.get('@checkboxTask').click();
     cy.get('@overlay').should('have.class', 'todo-home__task-item-overlay--active');
     cy.wait(3000);
     cy.get('@taskName').should('not.have.class', 'todo-home__task-item-name--completed');
