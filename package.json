@@ -25,14 +25,14 @@
     "yup": "^0.29.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts  start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "test:mocha": "mocha --require @babel/register --require test/setup.js  --require ignore-styles",
     "test:server": "serve build",
-    "test:dev": "yarn run build && run-p --race test:server cypress:open"
+    "test:dev": "REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:open"
   },
   "eslintConfig": {
     "extends": "react-app"
