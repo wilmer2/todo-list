@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con Create-React-App y usand 8base como Backend as a service (
 
-## Available Scripts
+## Scripts disponibles
 
-In the project directory, you can run:
+En el directorio puedes correr:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Corre la app en modo development .<br />
+Abre [http://localhost:3000](http://localhost:3000) para verla en tu navegador.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+La página se volverá a cargar si realizas modificaciones.<br />
+También verá errores en consola..
+
+### `yarn test:dev`
+Corre los test de e2e en modo desarrollo abriendo la consola ofrecida por cypress
+
+### `yarn test:mocha`
+Corre test unitarios usando mochas
+
+### `yarn test:all`
+Corre los test unitario y luego los de e2e usando cypress en modo headless
+
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Corre los test de e2e usando cypress en modo headless
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Construye la aplicación para producción en la carpeta `build`. <br /> Empaqueta correctamente React en modo de producción y optimiza la compilación para obtener el mejor rendimiento. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+La compilación se minimiza y los nombres de archivo incluyen los hashes. <br /> 24 ¡Tu aplicación está lista para implementarse!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Nota: esta es una operación unidireccional. Una vez que "expulsa", ¡no puede regresar!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Si no está satisfecho con la herramienta de compilación y las opciones de configuración, puede "expulsar" en cualquier momento. Este comando eliminará la dependencia de compilación única de su proyecto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
