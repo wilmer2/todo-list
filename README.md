@@ -25,6 +25,10 @@ Este proyecto fue creado con Create-React-App y usand 8base como Backend as a se
 
 ![localhost_3000_home (2)](https://user-images.githubusercontent.com/9289120/85274499-08b85100-b44d-11ea-9eaf-0624aab5f919.png)
 
+## Home
+
+![localhost_3000_home](https://user-images.githubusercontent.com/9289120/85274598-27b6e300-b44d-11ea-9757-1f7eebc95689.png)
+
 
 
 ## Scripts Disponibles
