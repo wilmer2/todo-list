@@ -14,7 +14,12 @@
     
     border-top: 1px solid $grayColor
     border-bottom: 1px solid $grayColor
-    padding: 5px 16px
+    padding: 10px 16px
+
+    overflow: scroll
+
+    @include respondTo($minWidth, 768px)
+      overflow: initial
    
   &__task-item-img-container
     width: 40px
@@ -24,7 +29,9 @@
 
   &__task-item-avatar
     cursor: pointer
-    
+
+    @include respondTo($minWidth, 768px)
+      width: 280px
 
   &__task-item-img
     width: 100%
@@ -40,7 +47,8 @@
     cursor: pointer
 
   &__task-item-name
-
+    flex-shrink: 0
+    
     font-size: 14px
 
     transition: 1s
@@ -66,3 +74,12 @@
 
     &--active
       display: block
+
+  &__task-item-actions
+    display: flex
+    align-items: center
+    margin-left: 8px
+
+    @include respondTo($minWidth, 768px)
+      display: block
+      margin-left: 0
