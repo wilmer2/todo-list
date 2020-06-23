@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { gql } from 'apollo-boost';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import omit from 'lodash/omit';
 import { toast } from 'react-toastify';
+import api from '../../../api';
 import parseError from '../../../utils/parseError';
 import HomeTaskListItem from '../components/HomeTaskListItem';
 
@@ -45,6 +46,9 @@ const GET_TASKS = gql`
 `;
 
 const HomeTaskListItemContainer = ({ task, users }) => {
+  const client = useApolloClient();
+  const [taskDoneLoading, setTaskDoneLoading] = useState(false);
+
   const [updateTask, { loading: loadingUpdate }] = useMutation(UPDATE_TASK);
   const [deleteTask, { loading: loadingDelete}] = useMutation(DELETE_TASK, {
     update(cache, { data: { taskDelete }}) {
@@ -82,6 +86,57 @@ const HomeTaskListItemContainer = ({ task, users }) => {
       completed: !task.completed, 
     };
 
+    if (task.completed) {
+      uncheckTask(data);
+    } else {
+      checkTask(data);
+    }
+  };
+
+  const checkTask = async data => {
+    setTaskDoneLoading(true);
+    try {
+      const response = await api.taskDone({ task: data });
+
+      if (response.data && response.data.errors) {
+        const parsedError = parseError(response.data.errors);
+
+        toast.error(parsedError.validationMessageError);
+      } else {
+        const taskUpdated = response.data.taskUpdate;
+        const currentTasksList = client.readQuery({ query: GET_TASKS });
+        const taskItems = currentTasksList.tasksList.items.map(task => (
+          task.id === taskUpdated.id ?  { ...taskUpdated,
+            __typename: 'Task',
+            user: {
+              ...taskUpdated.user,
+              __typename: 'User',
+            }
+          } : task
+        ));
+        
+        client.writeQuery({
+          query: GET_TASKS,
+          data: {
+            tasksList: {
+              items: taskItems,
+              __typename: currentTasksList.tasksList.__typename,
+            },
+          }
+        });
+      }
+
+      setTaskDoneLoading(false);
+      
+    } catch(error) {
+      const parsedError = parseError(error);
+
+      toast.error(parsedError.validationMessageError);
+      setTaskDoneLoading(false);
+    }
+  };
+
+  const uncheckTask = async data => {
     try { 
       await updateTask({ variables: { data }});
     } catch(error) {
@@ -112,7 +167,7 @@ const HomeTaskListItemContainer = ({ task, users }) => {
 
   };
 
-  const loading = loadingUpdate || loadingDelete;
+  const loading = loadingUpdate || loadingDelete || taskDoneLoading;
   
   return (
     <HomeTaskListItem 
