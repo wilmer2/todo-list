@@ -96,7 +96,8 @@ const HomeTaskListItemContainer = ({ task, users }) => {
   const checkTask = async data => {
     setTaskDoneLoading(true);
     try {
-      const response = await api.taskDone({ task: data });
+      const token = await localStorage.getItem('token');
+      const response = await api.taskDone({ task: data, token });
 
       if (response.data && response.data.errors) {
         const parsedError = parseError(response.data.errors);

@@ -2,9 +2,8 @@ import client from './client';
 
 const BASE_WEBHOOK_URL = '/webhook/task';
 
-const taskDone = ({ task }) => {
+const taskDone = ({ task, token }) => {
   const endpoint = `${BASE_WEBHOOK_URL}/completed`;
-  const token = localStorage.getItem('token');
   const data = { task, token };
 
   try {
