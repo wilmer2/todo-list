@@ -15,7 +15,7 @@ const getValidationErrorFormat = fields => {
 
 const parseError = errors => {
   let validationInputError = {};
-  let validationMessageError = '';
+  let validationMessageError = 'Ha ocurrido un error, vuelve a intentarlo';
 
   if (errors.networkError) {
     validationMessageError = I18n.t(`fromServer.${errors.networkError.message}`);
