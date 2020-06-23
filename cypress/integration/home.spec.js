@@ -1,3 +1,5 @@
+import 'cypress-localstorage-commands';
+
 describe('Test home', () => {
   before(() => {
     cy.fixture('user.json').as('userData');
@@ -6,13 +8,14 @@ describe('Test home', () => {
       cy.get('#email').type(userData.email);
       cy.get('#password').type(userData.password);
       cy.contains('.btn', 'Ingresa').click();
-
-      cy.wait(3000);
+      cy.wait(6000);
+      cy.saveLocalStorage();
     });
   });
 
   beforeEach(() => {
     cy.fixture('user.json').as('userData');
+    cy.restoreLocalStorage();
   });
 
   it('Init home', () => {
