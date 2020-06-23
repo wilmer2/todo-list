@@ -58,7 +58,7 @@ const LoginContainer = ({ history }) => {
       localStorage.clear();
       setErrorMessage('Correo o contraseña incorrectos');
     }
-  }, [errorUser, setErrorMessage, localStorage]);
+  }, [errorUser, setErrorMessage]);
 
   useEffect(() => {
     if (user) {

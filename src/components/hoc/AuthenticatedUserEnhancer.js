@@ -15,6 +15,8 @@ const REFRESH_TOKEN = gql`
 `;
 
 const authenticatedUser = WrappedComponent => props => {
+  const{ history } = props;
+
   const [loading, setLoading] = useState(true);
   const [setRefreshToken, { data, error }] = useMutation(REFRESH_TOKEN);
 
@@ -22,7 +24,7 @@ const authenticatedUser = WrappedComponent => props => {
     const token = localStorage.getItem('token');
     
     if (!token) {
-      props.history.push('/');
+      history.push('/');
       return;
     }
 
@@ -33,16 +35,16 @@ const authenticatedUser = WrappedComponent => props => {
 
     const intervalId = setInterval(() => {
       const refreshToken = localStorage.getItem('refreshToken');
-      const data = { refreshToken: refreshToken };
+      const data = { refreshToken };
       
       setRefreshToken(({ variables: { data }})); 
-    }, 100000);
+    }, 3000);
 
     return () => {
       clearInterval(intervalId);
     };
     
-  }, [props, setRefreshToken]);
+  }, [history, setRefreshToken]);
 
   useEffect(() => {
     if (loading) {
@@ -58,9 +60,9 @@ const authenticatedUser = WrappedComponent => props => {
   useEffect(() => {
     if (error) {
       localStorage.clear();
-      props.history.push('/');
+      history.push('/');
     }
-  }, [error, props])
+  }, [error, history])
 
   if (error) return null;
   
