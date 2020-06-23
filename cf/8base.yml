@@ -1,0 +1,9 @@
+functions:
+  taskCheck:
+    type: webhook
+    handler:
+      code: src/webhooks/taskIsCompleted/handler.js
+    path: /task/completed
+    method: POST
+    description: |
+      call from cloud function taskCheck!!!

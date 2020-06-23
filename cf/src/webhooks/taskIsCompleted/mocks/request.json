@@ -1,0 +1,14 @@
+{
+  "data": {
+    "task": {
+      "id": "ckbqbzy5o001307mea3t7an7q",
+      "name": "tarea 1",
+      "completed": false
+    },
+    "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1qazNPVEZGTmtGQlEwRTNNa0pGT0RNeE1qUTJSamMzUVRRM1JqRTFSalF3UkRNME5qVkVSQSJ9.eyJodHRwczovLzhiYXNlLmNvbS92aXNpdG9yX2lkIjoiNjBiY2U2NDEtM2YzMS00ZWM4LWJjZDEtNzA2OGU0NzA2ODI3IiwiaHR0cHM6Ly84YmFzZS5jb20vY3JlYXRlZF9hdCI6IjIwMjAtMDYtMjJUMDc6MTk6NTEuNjU3WiIsImdpdmVuX25hbWUiOiJFZGdhcmRvIiwiZmFtaWx5X25hbWUiOiJaYW1icmFubyIsIm5pY2tuYW1lIjoiZWRnYXJkby5wYXlhbGwyMyIsIm5hbWUiOiJFZGdhcmRvIFphbWJyYW5vIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2U4MGUxYTBjZTlhNjA3ZmU2YjA0MWY1ZDgyMTU2YmU5P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGZWQucG5nIiwidXBkYXRlZF9hdCI6IjIwMjAtMDYtMjNUMDE6NDE6MTIuODQ1WiIsImVtYWlsIjoiZWRnYXJkby5wYXlhbGwyM0BnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly84YmFzZS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWVmMDViOTdmMjQ2NTQwMDEzYjkxMGYwIiwiYXVkIjoicUdIWlZ1NUN4WTVrbGl2bTI4T1BMam9wdnNZcDBiYUQiLCJpYXQiOjE1OTI4Nzg4NDEsImV4cCI6MTU5MjkxNDg0MX0.K9ZMf0LQwrXNaGP2yTjea_B3CeViJVrzJvEBJht88NlVbOR-xS-pgGkyXskD01UyNSjtCCjNFfKlwx4bQSiWR-enTyhXQNBTdQRnYeZqjWMTdpgb7erdVmLVj-3b7HNqr_SzGADhy-GOurfAnkQTY6C9ckZcdoe1x0Lfl0gqDon2YaLpSN6WIlUvGyijZx-fSclMShj4YECkIIQl5aZmOCtcnoMXOYg5PwnL-IUCQY1b_2e78_dKX22fZDE1kR_o_UWxxcKMS9sNduLNYM5zVyphvF_7Xmd9_lLn-spiUo8lrFwOctb-5maadbeAH79qLanAPAxz8yGjgrDUwvlK_w"
+  },
+  "headers": {
+    "x-header-1": "header value"
+  },
+  "body": "{\"task\":{\"id\":\"ckbqbzy5o001307mea3t7an7q\",\"name\": \"tarea 1\", \"completed\":false}}"
+}

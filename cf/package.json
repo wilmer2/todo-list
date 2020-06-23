@@ -1,0 +1,9 @@
+{
+  "name": "cf",
+  "version": "1.0.0",
+  "description": "8base Custom Logic",
+  "dependencies": {
+    "graphql": "^15.1.0",
+    "graphql-tag": "^2.10.3"
+  }
+}
