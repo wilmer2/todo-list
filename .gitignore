@@ -24,3 +24,7 @@ yarn-error.log*
 
 # cypress
 /cypress/video
+
+# workspace
+.workspace.json
+/cf/.workspace.json
