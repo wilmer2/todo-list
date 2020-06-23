@@ -8,9 +8,11 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "apollo-boost": "^0.4.9",
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "formik": "^2.1.4",
     "graphql": "^15.1.0",
+    "graphql-tag": "^2.10.3",
     "i18n-js": "^3.7.0",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
@@ -35,7 +37,6 @@
     "test:dev": "REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:open",
     "test:all": "yarn run test:mocha && REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:run",
     "test": "REACT_APP_TOKEN_ID=ckbpor1mc000707mwa4ff4pz8 yarn run build && run-p --race test:server cypress:run"
-
   },
   "eslintConfig": {
     "extends": "react-app"
